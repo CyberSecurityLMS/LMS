@@ -2,12 +2,12 @@ name: Android CI
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main]
     paths:
       - 'lms_android/**'
 
-  pull_request:
-    branches: [main, develop]
+  pull_request_target:
+    branches: [main]
     paths:
       - 'lms_android/**'
 
