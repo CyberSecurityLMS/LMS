@@ -23,9 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import hse.diploma.cybersecplatform.R
+import hse.diploma.cybersecplatform.domain.model.Difficulty
 import hse.diploma.cybersecplatform.ui.theme.Montserrat
 import hse.diploma.cybersecplatform.ui.theme.Typography
-import hse.diploma.cybersecplatform.utils.Difficulty
 
 @Composable
 fun FilterSelectionDialog(
@@ -118,14 +118,14 @@ fun FilterSelectionDialog(
                 )
             }
         },
-        containerColor = colorResource(R.color.xss_card_color),
+        containerColor = colorResource(R.color.dialog_color),
         tonalElevation = 8.dp,
     )
 }
 
 @Preview
 @Composable
-fun FilterSelectionDialogPreview() {
+private fun FilterSelectionDialogPreview() {
     FilterSelectionDialog(
         onFilterSelected = {},
         onDismiss = {},
