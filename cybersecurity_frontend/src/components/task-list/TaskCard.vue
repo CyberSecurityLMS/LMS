@@ -1,22 +1,25 @@
 <template>
-  <div class="task-card" :style="{ backgroundColor: cardColor }">
+  <router-link
+    :to="{
+      name: 'TaskPage',
+      params: { taskId: task.id, vulnerability: task.vulnerability },
+    }"
+    class="task-card"
+    :style="{ backgroundColor: cardColor }"
+  >
     <div class="task-card-content">
       <img :src="icon" alt="" class="task-icon" />
       <div class="text-content">
         <h3 class="task-title">{{ task.title }}</h3>
         <p class="task-description">{{ task.description }}</p>
       </div>
-      <router-link
-        :to="{
-          name: 'TaskPage',
-          params: { taskId: task.id, vulnerability: task.vulnerability },
-        }"
-        class="chevron-link"
-      >
-        <img src="@/assets/icons/chevron-right.svg" alt="chevron-right" />
-      </router-link>
+      <img
+        src="@/assets/icons/chevron-right.svg"
+        alt="chevron-right"
+        class="chevron-icon"
+      />
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -61,6 +64,7 @@ export default {
   border-radius: 20px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  text-decoration: none;
 }
 
 .task-card-content {
@@ -87,6 +91,7 @@ export default {
   font-size: 32px;
   line-height: 39px;
   margin-bottom: 10px;
+  color: #3764ed;
 }
 
 .task-description {
@@ -94,9 +99,10 @@ export default {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
+  color: #3764ed;
 }
 
-.chevron-link {
+.chevron-icon {
   position: absolute;
   bottom: 20px;
   right: 20px;
